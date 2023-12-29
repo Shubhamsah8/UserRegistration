@@ -12,4 +12,10 @@ public class UserValidationTest {
 
         Assert.assertTrue(userValidation.isValidFirstName("Shubham"));
     }
+
+    @Test
+    public void testValidLastName(){
+        UserValidation userValidation = new UserValidation();
+        Assert.assertTrue(userValidation.isValidLastName("Shah"));
+    }
 }
