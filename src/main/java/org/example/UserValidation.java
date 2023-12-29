@@ -18,4 +18,8 @@ public class UserValidation {
     public static boolean isValidMobileNumber(String mobileNumber){
         return mobileNumber.matches("91 \\d{10}");
     }
+
+    public static boolean isValidPassword(String password){
+        return password.length() >=8;
+    }
 }
