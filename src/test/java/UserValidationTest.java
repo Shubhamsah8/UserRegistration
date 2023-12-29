@@ -29,4 +29,9 @@ public class UserValidationTest {
     public void testValidMobileNumber(){
         Assert.assertTrue(userValidation.isValidMobileNumber("91 8779817254"));
     }
+
+    @Test
+    public void testValidPassword(){
+        Assert.assertTrue(userValidation.isValidPassword("Shubhamsha"));
+    }
 }
