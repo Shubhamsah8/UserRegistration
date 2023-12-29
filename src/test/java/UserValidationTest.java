@@ -9,29 +9,48 @@ public class UserValidationTest {
     UserValidation userValidation = new UserValidation();
     @Test
     public void testValidFirstName(){
-
-        Assert.assertTrue(userValidation.isValidFirstName("Shubham"));
+        try {
+            Assert.assertTrue(userValidation.isValidFirstName("Shubham"));
+        } catch (UserValidation.InvalidUserException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Test
     public void testValidLastName(){
 
-        Assert.assertTrue(userValidation.isValidLastName("Shah"));
+        try {
+            Assert.assertTrue(userValidation.isValidLastName("Shah"));
+        } catch (UserValidation.InvalidUserException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Test
     public void testValidEmail(){
 
-        Assert.assertTrue(userValidation.isValidEmail("shubhamsah086@gmail.com"));
+        try {
+            Assert.assertTrue(userValidation.isValidEmail("shubhamsah086@gmail.com"));
+        } catch (UserValidation.InvalidUserException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Test
     public void testValidMobileNumber(){
-        Assert.assertTrue(userValidation.isValidMobileNumber("91 8779817254"));
+        try {
+            Assert.assertTrue(userValidation.isValidMobileNumber("91 8779817254"));
+        } catch (UserValidation.InvalidUserException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Test
     public void testValidPassword(){
-        Assert.assertTrue(userValidation.isValidPassword("SHubhamsha123#"));
+        try {
+            Assert.assertTrue(userValidation.isValidPassword("SHubhamsha123#"));
+        } catch (UserValidation.InvalidUserException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
