@@ -15,4 +15,7 @@ public class UserValidation {
         return email.matches("[a-zA-Z0-9./%]+@[A-Za-z]+\\.[a-zA-Z]{2,}");
     }
 
+    public static boolean isValidMobileNumber(String mobileNumber){
+        return mobileNumber.matches("91 \\d{10}");
+    }
 }
