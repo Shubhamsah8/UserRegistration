@@ -18,4 +18,10 @@ public class UserValidationTest {
         UserValidation userValidation = new UserValidation();
         Assert.assertTrue(userValidation.isValidLastName("Shah"));
     }
+
+    @Test
+    public void testValidEmail(){
+        UserValidation userValidation = new UserValidation();
+        Assert.assertTrue(userValidation.isValidEmail("shubhamsah086@gmail.com"));
+    }
 }
