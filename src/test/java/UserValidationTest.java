@@ -6,22 +6,27 @@ import org.junit.jupiter.api.Test;
 import org.junit.Assert.*;
 public class UserValidationTest {
 
+    UserValidation userValidation = new UserValidation();
     @Test
     public void testValidFirstName(){
-        UserValidation userValidation = new UserValidation();
 
         Assert.assertTrue(userValidation.isValidFirstName("Shubham"));
     }
 
     @Test
     public void testValidLastName(){
-        UserValidation userValidation = new UserValidation();
+
         Assert.assertTrue(userValidation.isValidLastName("Shah"));
     }
 
     @Test
     public void testValidEmail(){
-        UserValidation userValidation = new UserValidation();
+
         Assert.assertTrue(userValidation.isValidEmail("shubhamsah086@gmail.com"));
+    }
+
+    @Test
+    public void testValidMobileNumber(){
+        Assert.assertTrue(userValidation.isValidMobileNumber("91 8779817254"));
     }
 }
