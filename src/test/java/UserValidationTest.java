@@ -32,6 +32,6 @@ public class UserValidationTest {
 
     @Test
     public void testValidPassword(){
-        Assert.assertTrue(userValidation.isValidPassword("Shubhamsha"));
+        Assert.assertTrue(userValidation.isValidPassword("SHubhamsha"));
     }
 }
