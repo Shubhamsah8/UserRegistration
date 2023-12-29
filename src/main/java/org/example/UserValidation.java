@@ -11,5 +11,8 @@ public class UserValidation {
         return lastName.matches("[A-Z][a-z]{2,}");
     }
 
+    public boolean isValidEmail(String email){
+        return email.matches("[a-zA-Z0-9./%]+@[A-Za-z]+\\.[a-zA-Z]{2,}");
+    }
 
 }
