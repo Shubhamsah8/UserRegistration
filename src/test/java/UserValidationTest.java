@@ -1,108 +1,81 @@
 import org.example.UserValidation;
-import org.example.*;
 import org.junit.Assert;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.Assert.*;
 
-/*
-    @description: This class contains test cases for user validation, handling custom exceptions.
-*/
+/**
+ * Test class for the UserValidation class, covering various validation scenarios.
+ */
 public class UserValidationTest {
 
+    // Instance of UserValidation for testing
     UserValidation userValidation = new UserValidation();
 
-    /*
-        @description: Tests the validation of a valid first name.
-        @parameters: None
-        @return: None
-    */
+    /**
+     * Test case for validating a valid first name.
+     */
     @Test
-    public void testValidFirstName(){
+    public void testValidFirstName() {
         try {
-            /*
-                @description: Validates a first name "Shubham".
-                @parameters: None
-                @return: Expects the validation result to be true.
-            */
+            // Assert that the first name "Shubham" is considered valid
             Assert.assertTrue(userValidation.isValidFirstName("Shubham"));
         } catch (UserValidation.InvalidUserException e) {
+            // Throw a RuntimeException if an unexpected exception occurs during the test
             throw new RuntimeException(e);
         }
     }
 
-    /*
-        @description: Tests the validation of a valid last name.
-        @parameters: None
-        @return: None
-    */
+    /**
+     * Test case for validating a valid last name.
+     */
     @Test
-    public void testValidLastName(){
+    public void testValidLastName() {
         try {
-            /*
-                @description: Validates a last name "Shah".
-                @parameters: None
-                @return: Expects the validation result to be true.
-            */
+            // Assert that the last name "Shah" is considered valid
             Assert.assertTrue(userValidation.isValidLastName("Shah"));
         } catch (UserValidation.InvalidUserException e) {
+            // Throw a RuntimeException if an unexpected exception occurs during the test
             throw new RuntimeException(e);
         }
     }
 
-    /*
-        @description: Tests the validation of a valid email address.
-        @parameters: None
-        @return: None
-    */
+    /**
+     * Test case for validating a valid email.
+     */
     @Test
-    public void testValidEmail(){
+    public void testValidEmail() {
         try {
-            /*
-                @description: Validates an email address "shubhamsah086@gmail.com".
-                @parameters: None
-                @return: Expects the validation result to be true.
-            */
+            // Assert that the email "shubhamsah086@gmail.com" is considered valid
             Assert.assertTrue(userValidation.isValidEmail("shubhamsah086@gmail.com"));
         } catch (UserValidation.InvalidUserException e) {
+            // Throw a RuntimeException if an unexpected exception occurs during the test
             throw new RuntimeException(e);
         }
     }
 
-    /*
-        @description: Tests the validation of a valid mobile number.
-        @parameters: None
-        @return: None
-    */
+    /**
+     * Test case for validating a valid mobile number.
+     */
     @Test
-    public void testValidMobileNumber(){
+    public void testValidMobileNumber() {
         try {
-            /*
-                @description: Validates a mobile number "91 8779817254".
-                @parameters: None
-                @return: Expects the validation result to be true.
-            */
+            // Assert that the mobile number "91 8779817254" is considered valid
             Assert.assertTrue(userValidation.isValidMobileNumber("91 8779817254"));
         } catch (UserValidation.InvalidUserException e) {
+            // Throw a RuntimeException if an unexpected exception occurs during the test
             throw new RuntimeException(e);
         }
     }
 
-    /*
-        @description: Tests the validation of a valid password.
-        @parameters: None
-        @return: None
-    */
+    /**
+     * Test case for validating a valid password.
+     */
     @Test
-    public void testValidPassword(){
+    public void testValidPassword() {
         try {
-            /*
-                @description: Validates a password "SHubhamsha123#".
-                @parameters: None
-                @return: Expects the validation result to be true.
-            */
-            Assert.assertTrue(userValidation.isValidPassword("SHubhamsha123#"));
+            // Assert that the password "SHubhamsha123#" is considered valid
+            Assert.assertTrue(userValidation.isValidPassword("SHubhamsha123&"));
         } catch (UserValidation.InvalidUserException e) {
+            // Throw a RuntimeException if an unexpected exception occurs during the test
             throw new RuntimeException(e);
         }
     }

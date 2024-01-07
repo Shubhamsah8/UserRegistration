@@ -1,4 +1,4 @@
-import org.example.EmailValidator;
+import org.example.UserValidation;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.Assert;
@@ -8,27 +8,27 @@ import org.junit.runners.Parameterized.Parameters;
 import java.util.Arrays;
 import java.util.List;
 
-/*
-    @description: This class contains parameterized tests for email validation.
-*/
+/**
+ * Parameterized test class for email validation using JUnit's Parameterized runner.
+ */
 @RunWith(Parameterized.class)
 public class EmailParameterizedList {
     private String email;
 
-    /*
-        @description: Constructor to initialize the email parameter.
-        @parameters:
-            - email: The email address to be tested.
-    */
-    public EmailParameterizedList(String email){
+    /**
+     * Constructor for the EmailParameterizedList class.
+     *
+     * @param email the email to be tested
+     */
+    public EmailParameterizedList(String email) {
         this.email = email;
     }
 
-    /*
-        @description: Provides a list of email addresses for parameterized testing.
-        @parameters: None
-        @return: Returns a list of email addresses as test data.
-    */
+    /**
+     * Provides a list of email addresses as parameters for the parameterized test.
+     *
+     * @return a list of Object arrays containing email addresses
+     */
     @Parameters
     public static List<Object[]> data() {
         return Arrays.asList(new Object[][]{
@@ -38,18 +38,17 @@ public class EmailParameterizedList {
         });
     }
 
-    /*
-        @description: Tests the email validation using parameterized test data.
-        @parameters: None
-        @return: None
-    */
+    // Instance of UserValidation for testing
+    UserValidation userValidation = new UserValidation();
+
+    /**
+     * Parameterized test case for validating email addresses.
+     *
+     * @throws UserValidation.InvalidUserException if the email validation fails
+     */
     @Test
-    public void testEmailValidation(){
-        /*
-            @description: Validates the provided email address.
-            @parameters: None
-            @return: Expects the validation result to be true.
-        */
-        Assert.assertTrue(EmailValidator.isValidateEmail(email));
+    public void testEmailValidation() throws UserValidation.InvalidUserException {
+        // Assert that the email address is considered valid
+        Assert.assertTrue(userValidation.isValidEmail(email));
     }
 }
